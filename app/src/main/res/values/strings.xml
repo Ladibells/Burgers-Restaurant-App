@@ -4,4 +4,5 @@
     <string name="splash_header">Are you Hungry?</string>
     <string name="splash_subtext">Burger will deliver the treat \nyour palate can\'t resist</string>
     <string name="sign_in_text">Sign in to continue</string>
+    <string name="guest_text">Browse as guest</string>
 </resources>

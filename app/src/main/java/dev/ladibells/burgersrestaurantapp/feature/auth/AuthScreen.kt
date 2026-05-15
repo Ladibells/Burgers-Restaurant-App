@@ -3,8 +3,10 @@ package dev.ladibells.burgersrestaurantapp.feature.auth
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
@@ -18,6 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import dev.ladibells.burgersrestaurantapp.R
 import dev.ladibells.burgersrestaurantapp.component.GoogleButton
+import dev.ladibells.burgersrestaurantapp.component.PrimaryButton
 import dev.ladibells.burgersrestaurantapp.ui.theme.FontSize
 import dev.ladibells.burgersrestaurantapp.ui.theme.Resources
 import dev.ladibells.burgersrestaurantapp.ui.theme.oswaldVariableFont
@@ -58,6 +61,12 @@ fun AuthScreen() {
             GoogleButton(
                 onClick = {  },
                 icon = painterResource(id = Resources.Image.GoogleLogo)
+            )
+            Spacer(modifier = Modifier.height(14.dp))
+            PrimaryButton(
+                text = stringResource(id = R.string.guest_text),
+                icon = painterResource(id = R.drawable.log_in),
+                onClick = {}
             )
         }
     }
