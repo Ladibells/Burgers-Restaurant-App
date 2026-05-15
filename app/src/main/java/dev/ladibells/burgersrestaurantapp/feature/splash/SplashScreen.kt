@@ -6,6 +6,7 @@ import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -46,7 +47,9 @@ import dev.ladibells.burgersrestaurantapp.ui.theme.oswaldVariableFont
 import dev.ladibells.burgersrestaurantapp.ui.theme.sentientVariable
 
 @Composable
-fun SplashScreen() {
+fun SplashScreen(
+    navigateToAuth: () -> Unit
+) {
     val scale = remember { Animatable(0f) }
 
     LaunchedEffect(
@@ -97,10 +100,10 @@ fun SplashScreen() {
             textAlign = TextAlign.Center
         )
 
-        Spacer(modifier = Modifier.height(25.dp))
+        Spacer(modifier = Modifier.height(100.dp))
 
         SplashButton(
-            onClick = {}
+            onClick = { navigateToAuth() }
         )
 
     }
@@ -116,7 +119,8 @@ fun SplashButton(
     Surface(
         modifier = modifier
             .fillMaxWidth()
-            .padding(20.dp),
+            .padding(20.dp)
+            .clickable{ onClick() },
         shape = RoundedCornerShape(99.dp),
         color = backgroundColor
     ) {

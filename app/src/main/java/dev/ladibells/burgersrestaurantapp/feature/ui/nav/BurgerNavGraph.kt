@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dev.ladibells.burgersrestaurantapp.feature.auth.AuthScreen
 import dev.ladibells.burgersrestaurantapp.feature.splash.SplashScreen
 
 @Composable
@@ -16,7 +17,17 @@ fun BurgerNavGraph(startDestination: Screens = Screens.SplashScreen) {
         startDestination = startDestination
     ) {
         composable<Screens.SplashScreen> {
-            SplashScreen()
+            SplashScreen(
+                navigateToAuth = {
+                    navController.navigate(Screens.AuthScreen) {
+                        popUpTo<Screens.SplashScreen> { inclusive = true }
+                    }
+                }
+            )
+        }
+
+        composable<Screens.AuthScreen> {
+            AuthScreen()
         }
     }
 }
